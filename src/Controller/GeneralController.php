@@ -32,6 +32,9 @@ class GeneralController extends AbstractController
             'Respuesta N°3'
         ];
 
+        dump($this);
+//        dd($this); dump and die
+
         return $this->render('/show.html.twig', [
             'questions' => ucwords(str_replace('-',' ', $show)),
             'answers' => $answers
