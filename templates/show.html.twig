@@ -4,19 +4,19 @@
 
 {% block body %}
 
-<h1>{{ questions }}</h1>
+<h1 class="d-flex justify-content-center">Su URL es --> <span class="badge badge-secondary">{{ questions }}</span></h1>
 
 {#<h1>{{ %whatever we need to put% }}</h1>#}
 
-<div>
+<div class="alert alert-primary">
     Este proyecto va a ser un verdadero Exito!
 </div>
 
-<h2>Respuestas {{ answers | length }}</h2>
+<h2>Respuestas <span class="badge badge-info">{{ answers | length }}</span></h2>
 
 <ul>
     {% for answer in answers %}
-        <li>{{ answer }}</li>
+        <li class="alert alert-success w-25 p-3">{{ answer }}</li>
     {% endfor %}
 </ul>
 

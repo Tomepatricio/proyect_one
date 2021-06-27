@@ -32,7 +32,7 @@ class GeneralController extends AbstractController
             'Respuesta N°3'
         ];
 
-        dump($this);
+//        dump($this);
 //        dd($this); dump and die
 
         return $this->render('/show.html.twig', [
