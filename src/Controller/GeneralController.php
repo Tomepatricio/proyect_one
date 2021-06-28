@@ -11,16 +11,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class GeneralController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/{any}")
      */
 
     public function homepage()
     {
-        return new Response('This is a Demostration');
+        return new Response($this->render('home.html.twig'));
+        //return $this->render('/home.html.tiwg');
     }
 
     /**
-     * @Route("/{show}")
+     * @Route("/question/{show}")
      */
 
     public function show($show)
@@ -44,5 +45,22 @@ class GeneralController extends AbstractController
 //            'This is another part of the page that we are going to: "%s"!',
 //            ucwords(str_replace('-',' ', $show))));
 //    }
+    }
+
+    /**
+     * @Route("/tutorial/{show}")
+     */
+    public function tutorial_show($show)
+    {
+        $answers = [
+            'Respuesta del tutorial N°1',
+            'Respuesta del tutorial N°2',
+            'Respuesta del tutorial N°3'
+        ];
+
+        return $this->render('/tutorial_show.html.twig', [
+            'question' => ucwords(str_replace('-',' ', $show)),
+            'answers' => $answers
+        ]);
     }
 }
